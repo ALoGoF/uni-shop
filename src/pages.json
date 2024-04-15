@@ -1,9 +1,21 @@
 {
+  //自动导入组件
+  "easycom": {
+    "autoscan": true,
+    "custom": {
+      // uni-ui 规则如下配置
+      "^uni-(.*)": "@dcloudio/uni-ui/lib/uni-$1/uni-$1.vue",
+      // 系统业务组件自动导入
+      "^Xtx(.*)": "@/components/Xtx$1.vue"
+    }
+  },
   "pages": [
     //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
     {
       "path": "pages/index/index",
       "style": {
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white",
         "navigationBarTitleText": "首页"
       }
     },
@@ -29,6 +41,18 @@
       "path": "pages/login/login",
       "style": {
         "navigationBarTitleText": "登录"
+      }
+    },
+    {
+      "path": "pages/hot/hot",
+      "style": {
+        "navigationBarTitleText": "热门推荐"
+      }
+    },
+    {
+      "path": "pages/goods/goods",
+      "style": {
+        "navigationBarTitleText": "商品详情"
       }
     }
   ],
@@ -70,5 +94,44 @@
         "selectedIconPath": "static/tabs/user_selected.png"
       }
     ]
+  },
+  "subPackages": [
+    {
+      "root": "pagesMember",
+      "pages": [
+        {
+          "path": "settings/settings",
+          "style": {
+            "navigationBarTitleText": "设置"
+          }
+        },
+        {
+          "path": "profile/profile",
+          "style": {
+            "navigationStyle": "custom",
+            "navigationBarTextStyle": "white",
+            "navigationBarTitleText": "个人信息"
+          }
+        },
+        {
+          "path": "address/address",
+          "style": {
+            "navigationBarTitleText": "地址管理"
+          }
+        },
+        {
+          "path": "address-form/address-form",
+          "style": {
+            "navigationBarTitleText": "新建地址"
+          }
+        }
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/my/my": {
+      "network": "all",
+      "packages": ["pagesMember"]
+    }
   }
 }

@@ -1,3 +1,10 @@
+<!--
+ * @Author: chengen
+ * @Date: 2024-04-07 13:18:10
+ * @LastEditors: chengen
+ * @LastEditTime: 2024-04-10 22:15:53
+ * @FilePath: /uni-shop/src/App.vue
+-->
 <script setup lang="ts">
 import { onLaunch, onShow, onHide } from '@dcloudio/uni-app'
 
